@@ -80,7 +80,7 @@ $(function() {
             loadFeed(0,done);
         });
         it('there is at least a single .entry element within the .feed container when the loadFeed function is called and completes.', function(done){
-            expect($('.feed .entry').length).not.toBe(null);
+            expect($('.feed .entry').length).not.toBe(0);
             done();
         });
     });
