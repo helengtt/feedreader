@@ -54,8 +54,8 @@ $(function() {
          */
         it('menu is hidden by default', function(){
             expect($('body').hasClass('menu-hidden')).toBe(true);
-            // Cannot read property 'contains' of undefined
-            // expect($('body').classList.contains('menu-hidden')).toBe(true);
+            // another way in JS:
+            // expect(document.body.classList).toContain('menu-hidden');
         });
 
          /* Ensure the menu changes visibility when the menu icon is clicked. 
@@ -94,9 +94,9 @@ $(function() {
 
         beforeEach(function(done){
             loadFeed(1, function(){
-                firstFeed = $('.feed').children();
+                firstFeed = $('.feed').html();
                 loadFeed(2, function(){
-                    secondFeed = $('.feed').children();
+                    secondFeed = $('.feed').html();
                     done();
                 });
             });
